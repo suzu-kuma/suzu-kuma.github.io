@@ -619,7 +619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="max-width:680px; margin:0 auto;">
     <p style="font-family:'Noto Sans JP',sans-serif; font-size:10px; letter-spacing:0.3em; color:#5AB5A0; text-align:center; margin-bottom:12px;">— RESERVATION —</p>
     <h2 style="font-family:'Shippori Mincho',serif; font-size:clamp(22px,4vw,32px); text-align:center; color:#2d2d2d; letter-spacing:0.12em; margin-bottom:8px;">ご予約・お問い合わせ</h2>
-    <p style="font-family:'Noto Sans JP',sans-serif; font-size:13px; color:rgba(45,45,45,0.6); text-align:center; margin-bottom:40px; line-height:1.8;">カウンセリングは完全無料・契約不要です。<br>お気軽にご連絡ください。</p>
+    <p style="font-family:'Noto Sans JP',sans-serif; font-size:13px; color:rgba(45,45,45,0.6); text-align:center; margin-bottom:40px; line-height:1.8;">カウンセリングは完全無料・契約不要です。<br>お気軽にご連絡ください。<br><span style="font-size:12px;">※現在、男性はご紹介のみご案内しております。</span></p>
 
     <form id="reservation-form" style="display:flex; flex-direction:column; gap:16px;">
       <input type="hidden" name="access_key" value="c7ee535a-5927-47c0-ad59-0471a67e18ac" />
@@ -663,46 +663,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <option>17〜19時</option>
           <option>いつでもOK</option>
         </select>
-      </div>
-
-      <!-- 性別・年齢 -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <div>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:10px;">性別 <span style="color:#5AB5A0;">*</span></label>
-          <div style="display:flex; gap:24px;">
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="gender" value="女性" required style="accent-color:#4BAF9A;" /> 女性</label>
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="gender" value="男性" style="accent-color:#4BAF9A;" /> 男性</label>
-          </div>
-          <p style="font-family:'Noto Sans JP',sans-serif; font-size:11px; color:rgba(45,45,45,0.5); margin-top:8px; line-height:1.7;">※現在、男性はご紹介のみご案内しております。</p>
-        </div>
-        <div>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:10px;">年齢 <span style="color:#5AB5A0;">*</span></label>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px;">
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="age" value="18-24歳" required style="accent-color:#4BAF9A;" /> 18-24歳</label>
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="age" value="25-34歳" style="accent-color:#4BAF9A;" /> 25-34歳</label>
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="age" value="35-44歳" style="accent-color:#4BAF9A;" /> 35-44歳</label>
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="age" value="45-54歳" style="accent-color:#4BAF9A;" /> 45-54歳</label>
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="age" value="55-64歳" style="accent-color:#4BAF9A;" /> 55-64歳</label>
-            <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="age" value="65歳以上" style="accent-color:#4BAF9A;" /> 65歳以上</label>
-          </div>
-        </div>
-      </div>
-
-      <!-- ご相談内容 -->
-      <div>
-        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:10px;">ご相談内容（複数選択可）</label>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 16px;">
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="目もと" style="accent-color:#4BAF9A;" /> 目もと</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="鼻" style="accent-color:#4BAF9A;" /> 鼻</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="口もと" style="accent-color:#4BAF9A;" /> 口もと</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="輪郭" style="accent-color:#4BAF9A;" /> 輪郭</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="バスト" style="accent-color:#4BAF9A;" /> バスト</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="若返り・リフトアップ" style="accent-color:#4BAF9A;" /> 若返り・リフトアップ</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="痩身" style="accent-color:#4BAF9A;" /> 痩身</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="美容皮膚科" style="accent-color:#4BAF9A;" /> 美容皮膚科</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="婦人科" style="accent-color:#4BAF9A;" /> 婦人科</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" name="concern" value="その他" style="accent-color:#4BAF9A;" /> その他</label>
-        </div>
       </div>
 
       <!-- 希望日 -->
@@ -749,24 +709,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- 当日の希望 -->
-      <div>
-        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">当日の希望 <span style="color:#5AB5A0; font-size:11px;">必須</span></label>
-        <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="same_day" value="当日の治療を希望します" required style="accent-color:#4BAF9A;" /> 当日の治療を希望します</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="same_day" value="カウンセリングの内容によって希望します" style="accent-color:#4BAF9A;" /> カウンセリングの内容によって希望します</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="same_day" value="カウンセリングのみを希望します" style="accent-color:#4BAF9A;" /> カウンセリングのみを希望します</label>
-        </div>
-      </div>
-
-      <!-- 来院経験 -->
-      <div>
-        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">当院ご来院経験</label>
-        <div style="display:flex; gap:24px; margin-top:4px;">
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="visited" value="はい" style="accent-color:#4BAF9A;" /> はい</label>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:#2d2d2d; display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="radio" name="visited" value="いいえ" style="accent-color:#4BAF9A;" /> いいえ</label>
-        </div>
-      </div>
       <!-- 備考 -->
       <div>
         <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">備考</label>
