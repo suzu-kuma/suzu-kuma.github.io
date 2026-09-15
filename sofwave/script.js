@@ -212,5 +212,26 @@ bookingForm?.addEventListener('submit', (event) => {
     bookingForm.reportValidity();
     return;
   }
-  window.location.href = 'thanks.html';
+
+  const submitBtn = bookingForm.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = '送信中...';
+
+  const data = new FormData(bookingForm);
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+    .then((res) => res.json())
+    .then((json) => {
+      if (json.success) {
+        window.location.href = 'thanks.html';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する ›';
+        alert('送信に失敗しました。お電話（082-222-6671）にてご連絡ください。');
+      }
+    })
+    .catch(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '送信する ›';
+      alert('通信エラーが発生しました。お電話（082-222-6671）にてご連絡ください。');
+    });
 });
