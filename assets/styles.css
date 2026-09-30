@@ -172,21 +172,21 @@ p { margin: 0; }
 .top-banner-cta:hover { opacity: 0.85; }
 
 .top-banner-text { display: none; }
-.top-banner-inner { gap: 10px; }
-.top-banner { padding: 8px 12px 10px; }
+.top-banner-inner { gap: 6px; }
+.top-banner { padding: 8px 10px; }
 .top-banner-inner {
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-wrap: nowrap;
+  gap: 5px;
   justify-content: center;
 }
-.top-banner-label { font-size: 13px; padding: 2px 10px; }
-.top-banner-countdown { font-size: 13px; }
-.top-banner-countdown .tb-seg { padding: 2px 5px; }
+.top-banner-label { font-size: 11px; padding: 2px 8px; }
+.top-banner-countdown { font-size: 11px; }
+.top-banner-countdown .tb-seg { padding: 2px 4px; }
 .top-banner-cta {
   width: auto;
   text-align: center;
-  padding: 5px 14px;
-  font-size: 13px;
+  padding: 4px 10px;
+  font-size: 11px;
   border-radius: 20px;
 }
 .site-header { top: 72px; }
