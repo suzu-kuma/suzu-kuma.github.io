@@ -1,0 +1,169 @@
+:root {
+  color-scheme: light;
+  font-family: "Helvetica Neue", "Noto Sans JP", sans-serif;
+  background: #f8f6f2;
+  color: #3a3a3a;
+  /* スライド比率 4:3(=1.333) + CTA比率 0.20 → 合計縦比 1.533 */
+  --lp-width: min(100vw, calc((100svh - env(safe-area-inset-bottom)) / 1.533));
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f6f2;
+  overflow: hidden;
+}
+.lp {
+  width: var(--lp-width);
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 0 50px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  :root { --lp-width: 100vw; }
+  body { background: #fff; }
+  .lp { box-shadow: none; }
+}
+
+.carousel {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.slides {
+  height: 100%;
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.slides::-webkit-scrollbar { display: none; }
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f6f2;
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* ページカウンター */
+.page-count {
+  position: absolute; z-index: 2; top: 12px; right: 12px;
+  display: flex; gap: 7px; align-items: center;
+  padding: 6px 10px; border-radius: 20px; background: rgba(255,255,255,.87);
+  font-size: 11px; font-variant-numeric: tabular-nums; pointer-events: none;
+}
+.count-divider { opacity: .4; }
+
+/* 矢印ボタン */
+.arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  display: grid; place-items: center; width: 44px; height: 44px;
+  padding: 8px; border: 1px solid rgba(255,255,255,.85); border-radius: 50%;
+  color: #fff; background: #c9a840; box-shadow: 0 2px 8px rgba(201,168,64,.35);
+  cursor: pointer; transition: opacity .2s, background .2s;
+}
+.arrow-prev { left: 5px; }
+.arrow-next { right: 5px; }
+.arrow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.arrow:disabled { opacity: 0; pointer-events: none; }
+.arrow:hover:not(:disabled) { background: #a8832a; }
+.arrow::before {
+  content: ""; position: absolute; inset: -2px; border-radius: 50%;
+  border: 2px solid #c9a840; opacity: 0; pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .arrow-next:not(:disabled) { animation: arrow-bob-right 2.2s ease-in-out infinite; }
+  .arrow-prev:not(:disabled) { animation: arrow-bob-left 2.2s ease-in-out infinite; }
+  .arrow:not(:disabled)::before { animation: arrow-ring 2.2s ease-in-out infinite; }
+  .arrow:hover:not(:disabled) { animation: none; }
+}
+@keyframes arrow-bob-right { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(5px)} }
+@keyframes arrow-bob-left  { 0%,100%{transform:translateY(-50%) translateX(0)} 50%{transform:translateY(-50%) translateX(-5px)} }
+@keyframes arrow-ring { 0%{transform:scale(1);opacity:.55} 70%,100%{transform:scale(1.7);opacity:0} }
+
+button:focus-visible, .slides:focus-visible { outline: 3px solid #c9a840; outline-offset: -3px; }
+
+/* CTA フッター — バナーを底揃えでクロップ、ボタン部分を確保 */
+.cta {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: calc(var(--lp-width) * 0.20);
+  overflow: hidden;
+  background: #f5ede0;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* バナー全体をリンクにする */
+.cta-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+/* 画像を底揃えにしてボタン部分を表示 */
+.cta-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0; left: 0;
+}
+
+/* ボタン部分に光るシャインアニメーション */
+/* ボタン位置: 画像bottom基準で下から8〜42%の高さ → 表示領域の30〜86% */
+.cta-btn-shine {
+  position: absolute;
+  left: 7%; right: 7%;
+  top: 30%; bottom: 13%;
+  border-radius: 999px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cta-btn-shine::before {
+  content: "";
+  position: absolute;
+  top: -60%; height: 220%;
+  left: -60%; width: 40%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255,255,255,.1) 35%,
+    rgba(255,255,255,.72) 50%,
+    rgba(255,255,255,.1) 65%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  animation: cta-shine 3.4s ease-in-out infinite;
+}
+@keyframes cta-shine { 0%{left:-60%} 16%,100%{left:150%} }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::after { transition: none !important; }
+  .cta-btn-shine::before { animation: none; }
+}
